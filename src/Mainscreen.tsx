@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import Layout from './Layout';
 import Modal from 'react-modal';
+import './styles.css';
 
 interface Props {
     user: string;
 }
 
 const Mainscreen: React.FC<Props> = ({ user }) => {
-    const[isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleModal = () => {
         setIsOpen(!isOpen);
@@ -30,12 +31,12 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
                 <div className="col-sm-12 text-center mb-5">
                     <button className="btn btn-primary" onClick={toggleModal}>Add new education</button>
                 </div>
+                <div className="col-sm-12 col-md-3">{sidePanel()}</div>
+                <div className="col-sm-12 col-md-9"></div>
                 <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel="My modal" className="mymodal" overlayClassName="myoverlay" closeTimeoutMS={500}>
                     <div>My Modal</div>
                     <button onClick={toggleModal}>Save</button>
                 </Modal>
-                <div className="col-sm-12 col-md-3">{sidePanel()}</div>
-                <div className="col-sm-12 col-md-9"></div>
             </div>
         </Layout>
     )
