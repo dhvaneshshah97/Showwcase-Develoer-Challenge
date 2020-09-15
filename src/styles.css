@@ -15,8 +15,8 @@
 
 .mymodal {
     position: fixed;
-    top: 20%;
-    left: 45%;
+    top: 3%;
+    left: 20%;
     /* transform: translate(-50%, -50%); */
     border: 1px solid #ccc;
     background: #fff;
@@ -24,6 +24,8 @@
     border-radius: 4px;
     outline: none;
     padding: 20px;
+    width: 60%;
+    max-height: 100vh;
 }
 
 .myoverlay {

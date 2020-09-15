@@ -33,12 +33,11 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
                     <button className="btn btn-primary" onClick={toggleModal}>Add new education</button>
                 </div>
                 <div className="col-sm-12 col-md-3">{sidePanel()}</div>
-                <div className="col-sm-12 col-md-9">
-                    <Modal_Form />
+                <div className="col-sm-12 col-md-6 offset-md-1">
                 </div>
                 <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel="My modal" className="mymodal" overlayClassName="myoverlay" closeTimeoutMS={500}>
-                    <div>My Modal</div>
-                    <button onClick={toggleModal}>Save</button>
+                    <div className="text-center" style={{fontWeight:'bold'}}>Education Form</div>
+                    <Modal_Form />
                 </Modal>
             </div>
         </Layout>
