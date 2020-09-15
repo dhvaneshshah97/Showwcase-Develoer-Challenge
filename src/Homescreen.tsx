@@ -1,20 +1,29 @@
 import React, { useState } from 'react';
 import Layout from './Layout';
+import { RouteComponentProps } from 'react-router-dom';
 
+interface Props extends RouteComponentProps<any> {
+    getName: (val: string) => void;
+}
 
-const HomeScreen: React.FC = () => {
+const Homescreen: React.FC<Props> = ({ getName, history }) => {
     const [name, setName] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
     }
 
+    const handleSubmit = () => {
+        getName(name);
+        history.push("/mainscreen");
+    }
+
     const showForm = () => {
         return (
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label className="text-muted">Type your name and click 'enter' below to begin!</label>
-                    <input className="form-control" value={name} onChange={handleChange} required/>
+                    <input className="form-control" value={name} onChange={handleChange} required />
                 </div>
                 <button className="btn btn-outline-primary">Enter</button>
             </form>
@@ -29,4 +38,4 @@ const HomeScreen: React.FC = () => {
     );
 }
 
-export default HomeScreen;
+export default Homescreen;

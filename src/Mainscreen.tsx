@@ -5,12 +5,12 @@ interface Props  {
     user: string;
 }
 
-const MainScreen: React.FC<Props> = ({user}) => {
+const Mainscreen: React.FC<Props> = ({user}) => {
     return (
-        <Layout className="container-fluid" title={`Welcome back ${user}`} description="Let's add some education details">
-            
+        <Layout className="container-fluid" title={`Welcome back, ${user}`} description="Let's add some education details">
+
         </Layout>
     )
 }
 
-export default MainScreen;
+export default Mainscreen;
