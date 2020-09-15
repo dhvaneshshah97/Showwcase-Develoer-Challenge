@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Layout from './Layout';
 import Modal from 'react-modal';
 import './styles.css';
+import Modal_Form from './Modal_Form';
 
 interface Props {
     user: string;
@@ -32,7 +33,9 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
                     <button className="btn btn-primary" onClick={toggleModal}>Add new education</button>
                 </div>
                 <div className="col-sm-12 col-md-3">{sidePanel()}</div>
-                <div className="col-sm-12 col-md-9"></div>
+                <div className="col-sm-12 col-md-9">
+                    <Modal_Form />
+                </div>
                 <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel="My modal" className="mymodal" overlayClassName="myoverlay" closeTimeoutMS={500}>
                     <div>My Modal</div>
                     <button onClick={toggleModal}>Save</button>
