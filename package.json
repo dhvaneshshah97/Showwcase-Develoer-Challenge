@@ -16,6 +16,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/react-select": "^3.0.19",
     "@types/react-virtualized-select": "^3.0.8",
+    "moment": "^2.28.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",

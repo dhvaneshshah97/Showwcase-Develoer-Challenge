@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from './Layout';
 import Modal from 'react-modal';
 import './styles.css';
 import Modal_Form from './Modal_Form';
+import moment from 'moment';
 
 interface Props {
     user: string;
@@ -10,12 +11,19 @@ interface Props {
 
 const Mainscreen: React.FC<Props> = ({ user }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [details, setDetails] = useState([]);
+    const [details, setDetails] = useState<any>([]);
 
-    // const getEducationDetails = (detail:Object) => {
-    //     details.push(detail)
-    // }
-    
+    useEffect(() => {
+        console.log(details)
+    }, [details])
+
+    const getEducationDetails = (detail: object) => {
+        console.log(detail);
+        const newArray = details.slice();
+        newArray.push(detail);
+        setDetails(newArray);
+    }
+
     const toggleModal = () => {
         setIsOpen(!isOpen);
     }
@@ -25,7 +33,7 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
             <h4 className="card-header">Your Education Info</h4>
             <ul className="list-group">
                 <li className="list-group-item">
-                    Eduaction 1
+                    
                 </li>
             </ul>
         </div>
@@ -40,15 +48,25 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
                 </div>
                 <div className="col-sm-12 col-md-3">{sidePanel()}</div>
                 <div className="col-sm-12 col-md-6 offset-md-1">
-                    {details.map((e,i)=>(
-                        <div>
-
+                    {details.map((ed: any, i: any) => (
+                        <div key={i} className="card" style={{marginBottom:40}}>
+                            <h1 className="card-header">
+                                {ed["name"]}
+                            </h1>
+                            <div className="card-body">
+                                <h5 className="card-title">{ed["degree"]} in {ed["fos"]}</h5>
+                                <span>{(ed['start'])}</span>{" - "}
+                                <span>{ed["end"]}</span>
+                            </div>
+                            <div className="card-text">Grade: {ed["grade"]}</div>
+                            <div className="card-text">Grade: {ed["description"]}</div>
+                            <button className="btn btn-danger">Delete Education</button>
                         </div>
                     ))}
                 </div>
                 <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel="My modal" className="mymodal" overlayClassName="myoverlay" closeTimeoutMS={500}>
                     <div className="text-center" style={{ fontWeight: 'bold' }}>Education Form</div>
-                    <Modal_Form toggleModal = {toggleModal} />
+                    <Modal_Form toggleModal={toggleModal} getEducationDetails={getEducationDetails} />
                 </Modal>
             </div>
         </Layout>

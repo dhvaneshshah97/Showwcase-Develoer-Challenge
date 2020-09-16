@@ -3,12 +3,12 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 interface Prop {
-    // getEducationDetails: (val: Object) => void
+    getEducationDetails: (val: Object) => void
     toggleModal: () => void;
 }
 
 
-const Modal_Form: React.FC<Prop> = ({toggleModal}) => {
+const Modal_Form: React.FC<Prop> = ({toggleModal, getEducationDetails}) => {
     const [universities, setUniversities] = useState([]);
     const [name, setName] = useState<any>({})
     const [values, setValues] = useState<any>({
@@ -44,6 +44,7 @@ const Modal_Form: React.FC<Prop> = ({toggleModal}) => {
     const handleSubmit = (e:any) => {
         e.preventDefault();
         values['name'] = name['name'];
+        getEducationDetails(values);
         console.log(values);
         toggleModal();
     }
