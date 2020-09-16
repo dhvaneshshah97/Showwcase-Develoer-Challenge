@@ -10,7 +10,12 @@ interface Props {
 
 const Mainscreen: React.FC<Props> = ({ user }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [details, setDetails] = useState([]);
 
+    // const getEducationDetails = (detail:Object) => {
+    //     details.push(detail)
+    // }
+    
     const toggleModal = () => {
         setIsOpen(!isOpen);
     }
@@ -26,6 +31,7 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
         </div>
     );
 
+
     return (
         <Layout className="container-fluid" title={`Welcome back, ${user}`} description="Let's add some education details" >
             <div className="row">
@@ -34,10 +40,15 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
                 </div>
                 <div className="col-sm-12 col-md-3">{sidePanel()}</div>
                 <div className="col-sm-12 col-md-6 offset-md-1">
+                    {details.map((e,i)=>(
+                        <div>
+
+                        </div>
+                    ))}
                 </div>
                 <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel="My modal" className="mymodal" overlayClassName="myoverlay" closeTimeoutMS={500}>
-                    <div className="text-center" style={{fontWeight:'bold'}}>Education Form</div>
-                    <Modal_Form />
+                    <div className="text-center" style={{ fontWeight: 'bold' }}>Education Form</div>
+                    <Modal_Form toggleModal = {toggleModal} />
                 </Modal>
             </div>
         </Layout>

@@ -5,7 +5,7 @@ import Mainscreen from './Mainscreen';
 
 
 const Routes = () => {
-    const [name, setName] = useState<string>('');
+    const [name, setName] = useState<string>('Default user');
 
     const getName = (val: string) => {
         setName(val);   
