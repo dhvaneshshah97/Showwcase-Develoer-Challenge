@@ -31,7 +31,7 @@ const Homescreen: React.FC<Props> = ({ getName, history }) => {
     }
 
     return (
-        <Layout title="Home Page" className="container-fluid col-md-6 offset-md-2" description="Your personal education showcase Portal">
+        <Layout title="Hi there!" className="container-fluid col-md-6 offset-md-2" description="Welcome to your education showcase">
             <h3 style={{ marginBottom: '50px' }}>Hi there! Welcome to your education showcase.</h3>
             {showForm()}
         </Layout>
