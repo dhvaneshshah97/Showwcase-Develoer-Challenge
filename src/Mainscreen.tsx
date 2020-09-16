@@ -4,6 +4,8 @@ import Modal from 'react-modal';
 import './styles.css';
 import Modal_Form from './Modal_Form';
 import moment from 'moment';
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 interface Props {
     user: string;
@@ -20,7 +22,7 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
     const getEducationDetails = (detail: object) => {
         console.log(detail);
         const newArray = details.slice();
-        newArray.push(detail);
+        newArray.unshift(detail)
         setDetails(newArray);
     }
 
@@ -32,9 +34,11 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
         <div className="card">
             <h4 className="card-header">Your Education Info</h4>
             <ul className="list-group">
-                <li className="list-group-item">
-                    
-                </li>
+                {details.map((ed: any, i: any) => (
+                    <li className="list-group-item">
+                        <Link smooth key={i} to={`/mainscreen/#${ed['degree']}`}>{`${ed['degree']} @ ${ed['name']}`}</Link>
+                    </li>
+                ))}
             </ul>
         </div>
     );
@@ -49,7 +53,7 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
                 <div className="col-sm-12 col-md-3">{sidePanel()}</div>
                 <div className="col-sm-12 col-md-6 offset-md-1">
                     {details.map((ed: any, i: any) => (
-                        <div key={i} className="card" style={{marginBottom:40}}>
+                        <div key={i} className="card" style={{ marginBottom: 40 }} id={ed['degree']}>
                             <h1 className="card-header">
                                 {ed["name"]}
                             </h1>
