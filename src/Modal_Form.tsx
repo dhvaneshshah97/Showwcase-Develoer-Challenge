@@ -46,6 +46,7 @@ const Modal_Form: React.FC<Prop> = ({ toggleModal, getEducationDetails }) => {
     const handleSubmit = (e: any) => {
         e.preventDefault();
         values['name'] = name['name'];
+        values['uniqueKey'] = values['name']+values['degree']
         getEducationDetails(values);
         console.log(values);
         toggleModal();

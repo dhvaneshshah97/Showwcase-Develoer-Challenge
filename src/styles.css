@@ -115,3 +115,9 @@
 .card-header {
     color: whitesmoke;
 }
+
+/* google font spartan for product details */
+
+.g-font {
+    font-family: 'Spartan', sans-serif;
+}

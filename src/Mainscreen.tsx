@@ -44,13 +44,23 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
         setIsOpen(!isOpen);
     }
 
+    const deleteEducation = (p:any, index:any) => {
+        details.map((e:any,i:any) => {
+            if (e['uniqueKey'] === p['uniqueKey']){
+                details.splice(index, 1)
+            }
+        });
+        localStorage.setItem('education',JSON.stringify(details))
+        setChange(!change);
+    }
+
     const sidePanel = () => (
         <div className="card">
-            <h4 className="card-header">Your Education Info</h4>
+            <h4 className="card-header g-font">Your Education Info</h4>
             <ul className="list-group">
                 {details.map((ed: any, i: any) => (
                     <li className="list-group-item" key={i}>
-                        <Link smooth key={i} to={`/mainscreen/#${ed['degree']}`}>{`${ed['degree']} @ ${ed['name']}`}</Link>
+                        <Link className="g-font" smooth key={i} to={`/mainscreen/#${ed['degree']}`}>{`${ed['degree']} @ ${ed['name']}`}</Link>
                     </li>
                 ))}
             </ul>
@@ -65,13 +75,13 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
                     <Link to="/" className="text-success"><i className="fas fa-chevron-left"></i> Back to Homescreen</Link>
                 </div>
                 <div className="col-sm-12 text-center mb-5">
-                    <button className="btn btn-primary" onClick={toggleModal}>Add new education</button>
+                    <button className="btn btn-primary g-font" onClick={toggleModal}>Add new education</button>
                 </div>
                 <div className="col-sm-12 col-md-3">
                     {localStorage.getItem('education') && sidePanel()}
                 </div>
                 <div className="col-sm-12 col-md-6 offset-md-1">
-                    <Card details={details} />
+                    <Card details={details} deleteEducation={deleteEducation} />
                 </div>
                 <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel="My modal" className="mymodal" overlayClassName="myoverlay" closeTimeoutMS={500}>
                     <div className="text-center" style={{ fontWeight: 'bold' }}>Education Form</div>
