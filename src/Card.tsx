@@ -8,7 +8,7 @@ const Card: React.FC<Prop> = ({ details }) => {
     return (
         <div>
             {details.map((d: any, i: any) => (
-                <div className="card mb-5" id={d['degree']}>
+                <div className="card mb-5" id={d['degree']} key={i}>
                     <h4 className="card-header">Education</h4>
                     <ul className="list-group">
                         <li className="list-group-item">Name of University: {d['name']}</li>

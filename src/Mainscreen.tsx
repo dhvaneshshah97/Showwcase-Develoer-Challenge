@@ -15,16 +15,29 @@ interface Props {
 const Mainscreen: React.FC<Props> = ({ user }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [details, setDetails] = useState<any>([]);
+    const [change, setChange] = useState(false);
 
     useEffect(() => {
-        console.log(details)
-    }, [details])
+        // if (localStorage.getItem('name')) user=localStorage.getItem('name') || ''
+        items();
+    }, [change])
 
-    const getEducationDetails = (detail: object) => {
-        console.log(detail);
-        const newArray = details.slice();
-        newArray.unshift(detail)
-        setDetails(newArray);
+    const items = () => {
+        if (localStorage.getItem('education')) {
+            setDetails(JSON.parse(localStorage.getItem('education') || ''))
+        }
+    }
+
+    const getEducationDetails = async(detail: object) => {
+        var newArray = []
+        if (typeof (window) !== undefined) {
+            if (localStorage.getItem('education')) {
+                newArray = JSON.parse(localStorage.getItem('education') || '');
+            }
+        }
+        newArray.unshift(detail);
+        localStorage.setItem('education',JSON.stringify(newArray));
+        setChange(!change);
     }
 
     const toggleModal = () => {
@@ -36,7 +49,7 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
             <h4 className="card-header">Your Education Info</h4>
             <ul className="list-group">
                 {details.map((ed: any, i: any) => (
-                    <li className="list-group-item">
+                    <li className="list-group-item" key={i}>
                         <Link smooth key={i} to={`/mainscreen/#${ed['degree']}`}>{`${ed['degree']} @ ${ed['name']}`}</Link>
                     </li>
                 ))}
@@ -49,12 +62,14 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
         <Layout className="container-fluid" title={`Welcome back, ${user}`} description="Let's add some education details" >
             <div className="row">
                 <div className="col-sm-12 mb-3">
-                    <Link to="/" className="text-success"><i className="fas fa-angle-left" /> Back to Homescreen</Link>
+                    <Link to="/" className="text-success"><i className="fas fa-chevron-left"></i> Back to Homescreen</Link>
                 </div>
                 <div className="col-sm-12 text-center mb-5">
                     <button className="btn btn-primary" onClick={toggleModal}>Add new education</button>
                 </div>
-                <div className="col-sm-12 col-md-3">{sidePanel()}</div>
+                <div className="col-sm-12 col-md-3">
+                    {localStorage.getItem('education') && sidePanel()}
+                </div>
                 <div className="col-sm-12 col-md-6 offset-md-1">
                     <Card details={details} />
                 </div>
