@@ -39,7 +39,7 @@
 * border-radius
 */
 
-.btn, .jumbotron, .form-control {
+.btn, .jumbotron, .form-control, .card, .list-group {
     border-radius: 0px;
 }
 
@@ -106,4 +106,12 @@
     100% {
         background-position: 0% 50%;
     }
+}
+
+.card {
+    background-color: #262626;
+}
+
+.card-header {
+    color: whitesmoke;
 }

@@ -5,6 +5,7 @@ import './styles.css';
 import Modal_Form from './Modal_Form';
 import moment from 'moment';
 import { HashLink as Link } from 'react-router-hash-link';
+import Card from './Card';
 
 
 interface Props {
@@ -55,21 +56,7 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
                 </div>
                 <div className="col-sm-12 col-md-3">{sidePanel()}</div>
                 <div className="col-sm-12 col-md-6 offset-md-1">
-                    {details.map((ed: any, i: any) => (
-                        <div key={i} className="card" style={{ marginBottom: 40 }} id={ed['degree']}>
-                            <h3 className="card-header">
-                                {ed["name"]}
-                            </h3>
-                            <div className="card-body">
-                                <h5 className="card-title">{ed["degree"]} in {ed["fos"]}</h5>
-                                <span>{(ed['start'])}</span>{" - "}
-                                <span>{ed["end"]}</span>
-                            </div>
-                            <div className="card-text">Grade: {ed["grade"]}</div>
-                            <div className="card-text">Grade: {ed["description"]}</div>
-                            <button className="btn btn-danger">Delete Education</button>
-                        </div>
-                    ))}
+                    <Card details={details} />
                 </div>
                 <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel="My modal" className="mymodal" overlayClassName="myoverlay" closeTimeoutMS={500}>
                     <div className="text-center" style={{ fontWeight: 'bold' }}>Education Form</div>

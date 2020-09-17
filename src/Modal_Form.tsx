@@ -54,12 +54,12 @@ const Modal_Form: React.FC<Prop> = ({ toggleModal, getEducationDetails }) => {
     const newModalForm = () => (
         <form className="mb-3" onSubmit={handleSubmit}>
             <div className="form-group">
-                <label className="text-muted">Name of School</label>
-                <Autocomplete id="School" options={universities} getOptionLabel={(u) => u['name']} renderInput={(params) => <TextField {...params} label="School" variant="outlined" />} onChange={(event, newValue) => { setName(newValue) }} />
+                <label className="text-muted">Name of School <span style={{color:'red'}}>*</span></label>
+                <Autocomplete id="School" options={universities} getOptionLabel={(u) => u['name']} renderInput={(params) => <TextField {...params} label="School" variant="outlined" />} onChange={(event, newValue) => { setName(newValue) }}  freeSolo />
             </div>
             <div className="form-group">
-                <label className="text-muted">Degree</label>
-                <select className="form-control" name="degree" onChange={handleChange} value={degree}>
+                <label className="text-muted">Degree <span style={{color:'red'}}>*</span></label>
+                <select className="form-control" name="degree" onChange={handleChange} value={degree} required>
                     <option value="">Please Select</option>
                     {typeofdegree.map((d,i) => (
                         <option key={i} value={d}>{d}</option>
@@ -67,23 +67,23 @@ const Modal_Form: React.FC<Prop> = ({ toggleModal, getEducationDetails }) => {
                 </select>
             </div>
             <div className="form-group">
-                <label className="text-muted">Field of Study</label>
-                <input type="text" className="form-control" name="fos" value={fos} onChange={handleChange} />
+                <label className="text-muted">Field of Study <span style={{color:'red'}}>*</span></label>
+                <input type="text" className="form-control" name="fos" value={fos} onChange={handleChange} required />
             </div>
             <div className="row">
                 <div className="form-group col">
-                    <label className="text-muted">Start year</label>
-                    <input type="date" className="form-control" name="start" value={start} onChange={handleChange} />
+                    <label className="text-muted">Start year <span style={{color:'red'}}>*</span></label>
+                    <input type="date" className="form-control" name="start" value={start} onChange={handleChange} required/>
                 </div>
                 <div className="form-group col">
-                    <label className="text-muted">End year (expected)</label>
-                    <input type="date" className="form-control" name="end" value={end} onChange={handleChange} />
+                    <label className="text-muted">End year (expected) <span style={{color:'red'}}>*</span></label>
+                    <input type="date" className="form-control" name="end" value={end} onChange={handleChange} required />
                 </div>
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Grade (on scale 4.0)</label>
-                <input type="number" className="form-control" name="grade" value={grade} onChange={handleChange} max="4.0" min="0.0" />
+                <label className="text-muted">Grade (on scale 4.0) <span style={{color:'red'}}>*</span></label>
+                <input type="number" className="form-control" name="grade" value={grade} onChange={handleChange} max="4.0" min="0.0" step="0.01" required />
             </div>
             <div className="form-group">
                 <label className="text-muted">Description (e.g. - your experience with your University/Field of Study)</label>
