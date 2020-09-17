@@ -47,6 +47,9 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
     return (
         <Layout className="container-fluid" title={`Welcome back, ${user}`} description="Let's add some education details" >
             <div className="row">
+                <div className="col-sm-12 mb-3">
+                    <Link to="/" className="text-success"><i className="fas fa-angle-left" /> Back to Homescreen</Link>
+                </div>
                 <div className="col-sm-12 text-center mb-5">
                     <button className="btn btn-primary" onClick={toggleModal}>Add new education</button>
                 </div>
@@ -54,9 +57,9 @@ const Mainscreen: React.FC<Props> = ({ user }) => {
                 <div className="col-sm-12 col-md-6 offset-md-1">
                     {details.map((ed: any, i: any) => (
                         <div key={i} className="card" style={{ marginBottom: 40 }} id={ed['degree']}>
-                            <h1 className="card-header">
+                            <h3 className="card-header">
                                 {ed["name"]}
-                            </h1>
+                            </h3>
                             <div className="card-body">
                                 <h5 className="card-title">{ed["degree"]} in {ed["fos"]}</h5>
                                 <span>{(ed['start'])}</span>{" - "}
