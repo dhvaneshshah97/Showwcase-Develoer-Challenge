@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fdcfa2dfab0a861a56aa292eb2e386f8",
+    "revision": "2982ebb1f89caf2e11c0afa3e3f99e03",
     "url": "/Showwcase-Develoer-Challenge/index.html"
   },
   {
-    "revision": "a9d77ccf22a5dacd9302",
+    "revision": "323e215443eed3d5b6eb",
     "url": "/Showwcase-Develoer-Challenge/static/css/main.806047bd.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Showwcase-Develoer-Challenge/static/js/2.b21ab9ab.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a9d77ccf22a5dacd9302",
-    "url": "/Showwcase-Develoer-Challenge/static/js/main.9fc9c763.chunk.js"
+    "revision": "323e215443eed3d5b6eb",
+    "url": "/Showwcase-Develoer-Challenge/static/js/main.d3eed169.chunk.js"
   },
   {
     "revision": "881aecb0f27b462f4994",
