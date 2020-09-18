@@ -74,7 +74,7 @@ const Modal_Form: React.FC<Prop> = ({ toggleModal, getEducationDetails }) => {
             </div>
             <div className="form-group">
                 <label className="text-muted">Field of Study <span style={{color:'red'}}>*</span></label>
-                <input type="text" className="form-control" name="fos" value={fos} onChange={handleChange} required />
+                <input type="text" className="form-control" name="fos" value={fos} onChange={handleChange} required placeholder="e.g. - Computer Science" />
             </div>
             <div className="row">
                 <div className="form-group col">
