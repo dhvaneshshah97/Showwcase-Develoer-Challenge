@@ -3,14 +3,14 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Homescreen from './Homescreen';
 import Mainscreen from './Mainscreen';
 
-
-const Routes = () => {
+const Routes:React.FC = () => {
     const [name, setName] = useState<string>('');
 
     useEffect(() => {
         getName();
     }, [])
 
+    // getting name from homescreen and sending it to Mainscreen
     const getName = () => {
         setName(localStorage.getItem('name') || '')
     }

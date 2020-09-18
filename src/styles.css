@@ -120,4 +120,9 @@
 
 .g-font {
     font-family: 'Spartan', sans-serif;
+    font-weight: 600;
+}
+
+.list-group-item {
+    background-color: lightyellow;
 }

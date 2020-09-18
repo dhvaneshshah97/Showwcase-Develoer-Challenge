@@ -7,8 +7,8 @@ interface Prop {
     toggleModal: () => void;
 }
 
-
 const Modal_Form: React.FC<Prop> = ({ toggleModal, getEducationDetails }) => {
+    // state varibales
     const [universities, setUniversities] = useState([]);
     const [name, setName] = useState<any>({})
     const [values, setValues] = useState<any>({
@@ -20,8 +20,10 @@ const Modal_Form: React.FC<Prop> = ({ toggleModal, getEducationDetails }) => {
         description: '',
     });
 
+    // destructuring state variables
     const { degree, fos, start, end, grade, description } = values;
 
+    // fetch all universities from API when initial loading of Component
     const fetchUniversities = async () => {
         try {
             const rawResponse = await fetch('http://universities.hipolabs.com/search');
@@ -32,12 +34,14 @@ const Modal_Form: React.FC<Prop> = ({ toggleModal, getEducationDetails }) => {
         }
     }
 
+    // option values for degree drop-down
     const typeofdegree = ["High School", "Associate", "Bachelor", "Master", "MBA", "Juris Doctor (J.D.)", "Doctor of Medicine (M.D.)", "Doctor of Philosophy (Ph.D.)"]
 
     useEffect(() => {
         fetchUniversities();
     }, []);
 
+    // handleChange method for all form elements 
     const handleChange = (e: any) => {
         const { name, value } = e.target;
         setValues({ ...values, [name]: value });
@@ -52,6 +56,7 @@ const Modal_Form: React.FC<Prop> = ({ toggleModal, getEducationDetails }) => {
         toggleModal();
     }
 
+    // Modal form
     const newModalForm = () => (
         <form className="mb-3" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -100,7 +105,7 @@ const Modal_Form: React.FC<Prop> = ({ toggleModal, getEducationDetails }) => {
         <div>
             {newModalForm()}
         </div>
-    )
+    );
 }
 
 export default Modal_Form;

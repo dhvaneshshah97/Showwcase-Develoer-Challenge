@@ -8,7 +8,6 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ title = "Title", description = "Description", className, children }) => {
-    
     const url = "https://static.wixstatic.com/media/553d6a_6c7304f930724f46a47a88893ae7bb59~mv2.png/v1/fill/w_116,h_119,al_c,q_85,usm_0.66_1.00_0.01/Logo%20(20).webp"
     
     return (
@@ -19,8 +18,7 @@ const Layout: React.FC<Props> = ({ title = "Title", description = "Description",
             </div>
             <div className={className}>{children}</div>
         </div>
-
-    )
+    );
 }
 
 export default Layout;

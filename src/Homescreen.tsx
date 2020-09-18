@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Layout from './Layout';
 import { RouteComponentProps, Link } from 'react-router-dom';
 
+// Props for the Component
 interface Props extends RouteComponentProps<any> {
     getName: () => void;
 }
 
 const Homescreen: React.FC<Props> = ({ getName, history }) => {
+    // state variables
     const [name, setName] = useState('');
     const [disable, setDisable] = useState(false);
 
@@ -14,6 +16,7 @@ const Homescreen: React.FC<Props> = ({ getName, history }) => {
         setName(e.target.value);
     }
 
+    // setting state variable for conditional rendering
     const buttonDisable = () => {
         if (localStorage.getItem('name')) {
             setDisable(true);
@@ -59,7 +62,6 @@ const Homescreen: React.FC<Props> = ({ getName, history }) => {
                 </div>
                 }
             </div>
-
         );
     }
 

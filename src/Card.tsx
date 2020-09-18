@@ -15,12 +15,12 @@ const Card: React.FC<Prop> = ({ details, deleteEducation }) => {
         <div>
             {details.map((d: any, i: any) => (
                 <div className="card mb-5" id={d['degree']} key={i}>
-                    <h4 className="card-header g-font">Education {i+1}</h4>
+                    <h4 className="card-header g-font">Education Info</h4>
                     <ul className="list-group">
                         <li className="list-group-item g-font">Name of University: {d['name']}</li>
                         <li className="list-group-item g-font">Degree: {d['degree']}</li>
                         <li className="list-group-item g-font">Field of Study: {d['fos']}</li>
-                        <li className="list-group-item g-font">Duration: {d['start']} - {d['end']} </li>
+                        <li className="list-group-item g-font">Duration: {d['start']} to {d['end']} (in YYYY-MM-DD) </li>
                         <li className="list-group-item g-font">Grade: {d['grade']}/4 </li>
                         <li className="list-group-item g-font">Description: {d['description']} </li>
                         <li className="list-group-item"><button className="btn btn-danger g-font" onClick={() => handleDelete(d,i)}>Delete My Education</button></li>
@@ -28,9 +28,7 @@ const Card: React.FC<Prop> = ({ details, deleteEducation }) => {
                 </div>
             ))}
         </div>
-
-    )
+    );
 }
-
 
 export default Card;
