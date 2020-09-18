@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Showwcase-Develoer-Challenge/static/css/main.806047bd.chunk.css",
-    "main.js": "/Showwcase-Develoer-Challenge/static/js/main.d3eed169.chunk.js",
-    "main.js.map": "/Showwcase-Develoer-Challenge/static/js/main.d3eed169.chunk.js.map",
-    "runtime-main.js": "/Showwcase-Develoer-Challenge/static/js/runtime-main.b1f16ec0.js",
-    "runtime-main.js.map": "/Showwcase-Develoer-Challenge/static/js/runtime-main.b1f16ec0.js.map",
-    "static/js/2.b21ab9ab.chunk.js": "/Showwcase-Develoer-Challenge/static/js/2.b21ab9ab.chunk.js",
-    "static/js/2.b21ab9ab.chunk.js.map": "/Showwcase-Develoer-Challenge/static/js/2.b21ab9ab.chunk.js.map",
-    "index.html": "/Showwcase-Develoer-Challenge/index.html",
-    "precache-manifest.7977bca8d3bff523c438f18e4f4b99f1.js": "/Showwcase-Develoer-Challenge/precache-manifest.7977bca8d3bff523c438f18e4f4b99f1.js",
-    "service-worker.js": "/Showwcase-Develoer-Challenge/service-worker.js",
-    "static/css/main.806047bd.chunk.css.map": "/Showwcase-Develoer-Challenge/static/css/main.806047bd.chunk.css.map",
-    "static/js/2.b21ab9ab.chunk.js.LICENSE.txt": "/Showwcase-Develoer-Challenge/static/js/2.b21ab9ab.chunk.js.LICENSE.txt"
+    "main.css": "/Showwcase-Developer-Challenge/static/css/main.470e2d08.chunk.css",
+    "main.js": "/Showwcase-Developer-Challenge/static/js/main.2b8834da.chunk.js",
+    "main.js.map": "/Showwcase-Developer-Challenge/static/js/main.2b8834da.chunk.js.map",
+    "runtime-main.js": "/Showwcase-Developer-Challenge/static/js/runtime-main.c9cd7dfd.js",
+    "runtime-main.js.map": "/Showwcase-Developer-Challenge/static/js/runtime-main.c9cd7dfd.js.map",
+    "static/js/2.b21ab9ab.chunk.js": "/Showwcase-Developer-Challenge/static/js/2.b21ab9ab.chunk.js",
+    "static/js/2.b21ab9ab.chunk.js.map": "/Showwcase-Developer-Challenge/static/js/2.b21ab9ab.chunk.js.map",
+    "index.html": "/Showwcase-Developer-Challenge/index.html",
+    "precache-manifest.e2979d32e3cf4ceb8d84aff63e4d664a.js": "/Showwcase-Developer-Challenge/precache-manifest.e2979d32e3cf4ceb8d84aff63e4d664a.js",
+    "service-worker.js": "/Showwcase-Developer-Challenge/service-worker.js",
+    "static/css/main.470e2d08.chunk.css.map": "/Showwcase-Developer-Challenge/static/css/main.470e2d08.chunk.css.map",
+    "static/js/2.b21ab9ab.chunk.js.LICENSE.txt": "/Showwcase-Developer-Challenge/static/js/2.b21ab9ab.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b1f16ec0.js",
+    "static/js/runtime-main.c9cd7dfd.js",
     "static/js/2.b21ab9ab.chunk.js",
-    "static/css/main.806047bd.chunk.css",
-    "static/js/main.d3eed169.chunk.js"
+    "static/css/main.470e2d08.chunk.css",
+    "static/js/main.2b8834da.chunk.js"
   ]
 }
