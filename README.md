@@ -5,7 +5,7 @@
 <table>
 <tr>
 <td>
-A web app showcasing one's education details. Since, there was no use of database/server, I have used LocalStorage for storing user's name and his/her education information.
+  This is a Web App developed with React and TypeScript, showcasing one's education details. I have developed it as a part of <a href="https://www.showwcase.com">Showwcase's </a><strong>take home challenge</strong> as per their instructions.
 </td>
 </tr>
 </table>
